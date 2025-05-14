@@ -2,8 +2,7 @@
 Repozytorium przeznaczone jest do przechowania kodu aplikacji stworzonej na potrzeby laboratorium programowania aplikacji w chmurze obliczeniowej.
 
 # Polecenia do zbudowania i uruchomienia aplikacji
-docker buildx build -f Dockerfile -t docker.io/bartek19/lab:weather-app --push --cache-to type=registry,ref=docker.io/bartek19/cachedata_lab8,mode=max \ 
---cache-from type=registry,ref=docker.io/bartek19/cachedata_lab8 .
+docker buildx build -f Dockerfile -t docker.io/bartek19/lab:weather-app --push --cache-to type=registry,ref=docker.io/bartek19/cachedata_lab8,mode=max --cache-from type=registry,ref=docker.io/bartek19/cachedata_lab8 .
 
 docker run -p 8000:8000 --name pogoda docker.io/bartek19/lab:weather-app
 
